@@ -46,7 +46,7 @@ void blink_morse_str(char* str, uint16_t dot_length_ms)
     // Define a counter variable of type uint8_t
     uint8_t counter = 0;
     
-    while( str[counter] != 0 && counter < 255) // strings must be less than 255 characters
+    while(str[counter] != 0 && counter < 255) // strings must be less than 255 characters
     {
         blink_morse_char(str[counter],dot_length_ms);
         counter ++;
@@ -65,12 +65,21 @@ int main()
     initialize_LED();
     const uint16_t dot_length_ms = 100;
     char word[] = "Hello World!";
-    uint8_t count = 0;
-    while(word[count] != 0 && count < 255)
-    {
-    blink_morse_char(word[count],dot_length_ms);
-    count ++;
-}
+    
+    blink_morse_char(word[],dot_length_ms);
+    
+    //blink_morse_char(word,dot_length_ms);
+    
+    //blink_morse_char("Hello World!",dot_length_ms);
+
+    //blink_morse_char('Hello World!',dot_length_ms);
+    
+    //uint8_t count = 0;
+    //while(word[count] != 0 && count < 255)
+    //{
+    //blink_morse_char(word[count],dot_length_ms);
+    //count ++;
+    //}
 
   /*while(1)
   {
